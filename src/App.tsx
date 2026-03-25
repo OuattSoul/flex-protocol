@@ -162,32 +162,6 @@ const Hero = () => {
   );
 };
 
-const TrustBar = () => {
-  const partners = [
-    { name: 'UNICEF Venture Fund', logo: 'UNICEF' },
-    { name: 'Celo', logo: 'Celo' },
-    { name: 'GoodDollar', logo: 'GoodDollar' },
-    { name: 'Ethereum Foundation', logo: 'EF' },
-  ];
-
-  return (
-    <section className="py-12 bg-white border-y border-slate-100">
-      <div className="max-w-7xl mx-auto px-6">
-        <p className="text-center text-slate-400 font-semibold uppercase tracking-widest text-xs mb-10">
-          Supported and Trusted By
-        </p>
-        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-          {partners.map((p) => (
-            <div key={p.name} className="flex items-center gap-2 group cursor-default">
-              <div className="w-8 h-8 bg-slate-200 rounded-full group-hover:bg-emerald-500 transition-colors duration-300" />
-              <span className="text-xl font-bold text-slate-800 group-hover:text-emerald-600 transition-colors duration-300">{p.name}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
 
 const HowItWorks = () => {
   const steps = [
@@ -426,8 +400,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-        <TrustBar />
-        <HowItWorks />
+<HowItWorks />
         <ImpactStats />
         <TechSection />
       </main>
