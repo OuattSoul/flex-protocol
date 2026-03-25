@@ -162,7 +162,32 @@ const Hero = () => {
   );
 };
 
-// Partners and Trust Bar
+const TrustBar = () => {
+  const partners = [
+    { name: 'UNICEF Venture Fund', logo: 'UNICEF' },
+    { name: 'Celo', logo: 'Celo' },
+    { name: 'GoodDollar', logo: 'GoodDollar' },
+    { name: 'Ethereum Foundation', logo: 'EF' },
+  ];
+
+  return (
+    <section className="py-12 bg-white border-y border-slate-100">
+      <div className="max-w-7xl mx-auto px-6">
+        <p className="text-center text-slate-400 font-semibold uppercase tracking-widest text-xs mb-10">
+          Supported and Trusted By
+        </p>
+        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+          {partners.map((p) => (
+            <div key={p.name} className="flex items-center gap-2 group cursor-default">
+              <div className="w-8 h-8 bg-slate-200 rounded-full group-hover:bg-emerald-500 transition-colors duration-300" />
+              <span className="text-xl font-bold text-slate-800 group-hover:text-emerald-600 transition-colors duration-300">{p.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const HowItWorks = () => {
   const steps = [
@@ -343,7 +368,7 @@ const Footer = () => {
               />
             </div>
             <p className="text-slate-500 max-w-sm mb-8">
-              Empowering global impact through programmable humanitarian aid.
+              Empowering global impact through programmable humanitarian aid. Supported by UNICEF Venture Fund.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 transition-all">
