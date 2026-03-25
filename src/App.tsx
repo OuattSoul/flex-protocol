@@ -4,19 +4,22 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { 
-  ArrowRight, 
-  Zap, 
-  Users, 
-  Globe, 
-  Github, 
-  Twitter, 
-  Linkedin, 
+import {
+  ArrowRight,
+  Zap,
+  Users,
+  Globe,
+  Github,
+  Twitter,
+  Linkedin,
   Menu,
   X,
   Smartphone,
   Lock,
-  BarChart3
+  BarChart3,
+  ShieldCheck,
+  Heart,
+  Sparkles
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -34,6 +37,7 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Solution', href: '#solution' },
+    { name: 'About', href: '#about' },
     { name: 'Impact', href: '#impact' },
     { name: 'Tech', href: '#tech' },
   ];
@@ -162,6 +166,163 @@ const Hero = () => {
   );
 };
 
+
+const AboutSection = () => {
+  const values = [
+    {
+      icon: <ShieldCheck className="text-emerald-600" size={28} />,
+      title: "Radical Transparency",
+      desc: "Every dollar transferred, every voucher redeemed, every merchant settlement is recorded immutably on-chain — verifiable by anyone, anywhere, in real time. No more black boxes."
+    },
+    {
+      icon: <Heart className="text-emerald-600" size={28} />,
+      title: "Human-Centered by Design",
+      desc: "Built for the last mile. No crypto wallet, no private keys, no smartphone required. Beneficiaries are onboarded with nothing more than a phone number through SocialConnect."
+    },
+    {
+      icon: <Sparkles className="text-emerald-600" size={28} />,
+      title: "Borderless Impact",
+      desc: "Operating across 12+ countries, FLEX dissolves geographic and financial barriers so that humanitarian aid reaches those who need it most — fast, frictionless, and fairly."
+    }
+  ];
+
+  const partners = [
+    { name: 'UNICEF Venture Fund', abbr: 'UNICEF' },
+    { name: 'Celo', abbr: 'Celo' },
+    { name: 'GoodDollar', abbr: 'GD' },
+    { name: 'Ethereum Foundation', abbr: 'EF' },
+  ];
+
+  return (
+    <section id="about" className="py-28 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="grid md:grid-cols-2 gap-16 items-center mb-24"
+        >
+          <div>
+            <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 px-4 py-1.5 rounded-full text-sm font-bold mb-6">
+              <Globe size={14} />
+              <span>Our Mission</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-6">
+              Aid that works as hard as the people it serves
+            </h2>
+            <p className="text-slate-500 text-lg leading-relaxed">
+              FLEX Protocol was born from a simple observation: billions of dollars in humanitarian aid are lost every year to inefficiency, corruption, and opacity. We set out to fix this — not with incremental reforms, but with a fundamentally new infrastructure.
+            </p>
+          </div>
+
+          <div className="relative">
+            <div className="bg-emerald-50 rounded-[2.5rem] p-10 border border-emerald-100">
+              <blockquote className="text-xl md:text-2xl font-semibold text-slate-800 leading-relaxed mb-6">
+                "The problem is not a lack of generosity. It's a lack of programmable accountability."
+              </blockquote>
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 bg-emerald-600 rounded-full" />
+                <div>
+                  <p className="font-bold text-slate-900 text-sm">FLEX Core Team</p>
+                  <p className="text-slate-400 text-xs">UNICEF Venture Fund Cohort</p>
+                </div>
+              </div>
+            </div>
+            {/* Decorative dots */}
+            <div className="absolute -bottom-4 -right-4 w-24 h-24 grid grid-cols-4 gap-1.5 opacity-30">
+              {Array.from({ length: 16 }).map((_, i) => (
+                <div key={i} className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Story */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="bg-slate-900 text-white rounded-[2.5rem] p-12 md:p-16 mb-16 relative overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-600/10 blur-[100px] rounded-full" />
+          <div className="relative z-10 grid md:grid-cols-3 gap-10">
+            <div className="md:col-span-2">
+              <h3 className="text-2xl md:text-3xl font-bold mb-6 leading-snug">
+                From a whitepaper to a live protocol — built in public, deployed at scale.
+              </h3>
+              <p className="text-slate-400 leading-relaxed mb-4">
+                FLEX started as a response to a challenge posed by the UNICEF Venture Fund: how do you distribute digital cash to students in underserved regions without smartphones, without bank accounts, and without trust intermediaries?
+              </p>
+              <p className="text-slate-400 leading-relaxed">
+                The answer was programmable impact boxes — smart contracts that encode conditions, release funds automatically when those conditions are met, and leave an immutable audit trail every step of the way. Built on Celo, optimized for mobile, and designed for communities that existing fintech never served.
+              </p>
+            </div>
+            <div className="flex flex-col justify-center gap-6">
+              {[
+                { stat: '2023', label: 'Protocol Founded' },
+                { stat: '$2M+', label: 'Aid Distributed' },
+                { stat: '4', label: 'Ecosystem Partners' },
+              ].map((item, i) => (
+                <div key={i} className="border-l-2 border-emerald-500 pl-6">
+                  <div className="text-3xl font-bold text-emerald-400">{item.stat}</div>
+                  <div className="text-slate-400 text-sm">{item.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Core Values */}
+        <div className="grid md:grid-cols-3 gap-8 mb-20">
+          {values.map((v, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="bg-slate-50 rounded-[2rem] p-8 border border-slate-100 hover:border-emerald-200 hover:bg-emerald-50/30 transition-all duration-300 group"
+            >
+              <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:shadow-emerald-100 transition-shadow">
+                {v.icon}
+              </div>
+              <h4 className="text-xl font-bold text-slate-900 mb-3">{v.title}</h4>
+              <p className="text-slate-500 leading-relaxed text-sm">{v.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Partners */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          <p className="text-slate-400 font-semibold uppercase tracking-widest text-xs mb-8">
+            Backed &amp; Supported By
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
+            {partners.map((p) => (
+              <div key={p.name} className="flex items-center gap-3 group cursor-default">
+                <div className="w-9 h-9 bg-slate-100 rounded-full group-hover:bg-emerald-500 transition-colors duration-300 flex items-center justify-center">
+                  <span className="text-[10px] font-bold text-slate-500 group-hover:text-white transition-colors">{p.abbr.slice(0, 2)}</span>
+                </div>
+                <span className="text-lg font-bold text-slate-500 group-hover:text-emerald-600 transition-colors duration-300">{p.name}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+      </div>
+    </section>
+  );
+};
 
 const HowItWorks = () => {
   const steps = [
@@ -400,7 +561,8 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
-<HowItWorks />
+        <AboutSection />
+        <HowItWorks />
         <ImpactStats />
         <TechSection />
       </main>
