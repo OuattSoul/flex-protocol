@@ -341,7 +341,8 @@ const Footer = () => {
               />
             </div>
             <p className="text-slate-500 max-w-sm mb-8">
-              Empowering global impact through programmable humanitarian aid. Supported by UNICEF Venture Fund.
+              Empowering global impact through programmable humanitarian aid.
+              FLEX democratizes access to essential services by enabling vulnerable populations to use their Universal Basic Income to purchase educational, health, and nutrition Boxes—creating real and immediate utility for their funds.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-slate-400 hover:text-emerald-600 hover:bg-emerald-50 transition-all">
